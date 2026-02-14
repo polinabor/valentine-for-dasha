@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Love</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Добавляем FontAwesome для иконки стрелки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class='nav-item' onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Валентинка</div>
+        <div class='nav-item' onclick="document.getElementById('team').scrollIntoView({behavior: 'smooth'})">Плейлист</div>
+        <div class='nav-item' onclick="document.getElementById('game').scrollIntoView({behavior: 'smooth'})">Интерактивчик</div>
+    </nav>
+    <header>
+        <!--<h1>The 14th Of <span class='mars mars1'>Frbruary</span></h1>-->
+        <div class='arrow-next'><i class='fas fa-arrow-down'></i></div>
+    </header>
+    <main>
+        <section class='section1' id='about'>
+            <h1>Happy Valentine's Day!</h1>
+            <div class='about-wrapper'>
+                <p>Родная моя Дашенька, я от всего сердца поздравляю тебя с днем Святого Валентина!</p>
+                <p>Спасибо тебе большое за то что ты самый лучший человек в мире, ты отзывчивая, красивая, добрая, искренняя, умная и самая самая!!! В этот самый замечательный день я разумеется хочу пожелать тебе большой-большой любви: любви к себе, к музыке, к Италии, потому что я тебя очень очень люблю. Желаю, чтобы любовь окружала тебя везде, где бы ты не была, и знай что где-то есть Боромир, Чапли Далтон и я, и мы тебя любим.</p>
+                <p>Чудесного праздника, с <i>днем Святого Валентина.</i></p>
+            </div>
+        </section>
+        <section class='section2' id='team'>
+            <h1>Playlist For You</h1>
+            <div class="playlist-container">
+                <button class="arrow left-arrow">&#10094;</button>
+                <div class="playlist-slider">
+                    <div class="playlist-track">
+                        <div class="playlist-item">
+                            <img src="1.jpg" alt="Картинка 1">
+                            <p>If You Want To - beabadoobee</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img src="2.jpg" alt="Картинка 2">
+                            <p>Lovers Rock - TV Girl</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img src="3.jpg" alt="Картинка 3">
+                            <p>Cupid - Fifty Fifty</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img src="4.jpg" alt="Картинка 4">
+                            <p>Say Yes To Heaven - Lana Del Rey</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img src="5.jpg" alt="Картинка 5">
+                            <p>Ain't No Mountain High Enough - Marvin Gaye</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img src="6.jpg" alt="Картинка 6">
+                            <p>До Луны - Несладко</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img src="7.jpg" alt="Картинка 7">
+                            <p>So Easy - Olivia Dean</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img src="8.jpg" alt="Картинка 8">
+                            <p>Flightless Bird, American Mouth - Iron & Wine</p>
+                        </div>
+                        <div class="playlist-item">
+                            <img src="9.jpg" alt="Картинка 9">
+                            <p>Talk To You - Ricky Montgomery</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="arrow right-arrow">&#10095;</button>
+            </div>
+        </section>
+        <section class='section3' id='game'>
+            <h1>Поймай мою любовь! (Боромирчиков)</h1>
+            <div class='game-container'>
+                <div class='score-board'>Счёт: <span id='score'>0</span></div>
+                <div id='game-field'></div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Подключаем скрипт в конце body, чтобы DOM был готов -->
+    <script src='script.js'></script>
+</body>
+</html>
