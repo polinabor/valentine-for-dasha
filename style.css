@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden; /* Добавляем для предотвращения горизонтального скролла */
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: url('head4.svg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; /* Добавляем для надежности */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-direction: column;
+}
+
+.arrow-next {
+    font-size: 5em;
+    margin: 20px 0 0 0;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.arrow-next:hover {
+    transform: translateY(5px);
+}
+
+/* header h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0;
+    padding: 0 20px;
+}*/
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('afterhead.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Фон остается фиксированным при скролле */
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5em 0;
+    box-sizing: border-box;
+    color: black;
+}
+
+.section1 {
+    background: #FF60B6;
+}
+
+.section2 {
+    background: #fff0f3;
+}
+
+.section3 {
+    background: #FF60B6;
+    /* Убрали .section4, так как в исправленном HTML его нет */
+}
+
+.game-container {
+    width: 80vw;
+    max-width: 1200px;
+    min-width: 300px;
+    height: 60vh;
+    min-height: 400px;
+    border: 3px solid #FF60B6;
+    border-radius: 15px;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+.score-board {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 1.5em;
+    color: #FF60B6;
+    font-weight: bold;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.heart-target {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background-image: url('heart2.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Убираем псевдоэлементы, так как используем background-image */
+.heart-target::before,
+.heart-target::after {
+    content: ""; /* Убираем текст */
+    display: none; /* Скрываем псевдоэлементы */
+}
+
+.heart-target:hover {
+    transform: scale(1.2);
+}
+
+.heart-target:active {
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+
+nav {
+    width: 100vw;
+    padding: 1em 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    z-index: 1000;
+    background: rgba(255, 96, 182, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.nav-item {
+    width: fit-content;
+    padding: 0.5em 1em;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    margin-right: 1em;
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.nav-item:active {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(0);
+}
+
+#team > h1,
+#about > h1,
+#game > h1 {
+    text-transform: uppercase;
+    font-size: 2.5em;
+    text-align: center;
+    width: 80vw;
+    max-width: 1200px;
+    margin: 0 auto 1em;
+    color: #333;
+}
+
+#about > h1 {
+    color: white; /* Для контраста на розовом фоне */
+}
+
+.about-wrapper {
+    width: 80vw;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+    gap: 20px;
+}
+
+.about-wrapper p {
+    width: 100%;
+    line-height: 1.6;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.playlist-container {
+    position: relative;
+    width: 80%;
+    max-width: 1200px;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+}
+
+.playlist-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 10px 0;
+}
+
+.playlist-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    padding: 10px 0;
+}
+
+.playlist-item {
+    min-width: 300px;
+    max-width: 400px;
+    margin: 0 15px;
+    text-align: center;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.playlist-item:hover {
+    transform: translateY(-5px);
+}
+
+.playlist-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.playlist-item p {
+    padding: 15px;
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.arrow {
+    background-color: #FF60B6;
+    color: white;
+    font-size: 24px;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.arrow:hover:not(.disabled) {
+    background-color: #ff408e;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.left-arrow {
+    left: -25px;
+}
+
+.right-arrow {
+    right: -25px;
+}
+
+/* Стили для скрытия стрелок, если их нет */
+.arrow.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+        padding: 0 10px;
+    }
+    
+    .arrow-next {
+        font-size: 3em;
+    }
+    
+    #team > h1,
+    #about > h1,
+    #game > h1 {
+        font-size: 2em;
+        width: 90vw;
+    }
+    
+    .game-container {
+        width: 90vw;
+        height: 50vh;
+    }
+    
+    .playlist-container {
+        width: 90%;
+    }
+    
+    .playlist-item {
+        min-width: 250px;
+        margin: 0 10px;
+    }
+    
+    .playlist-item img {
+        height: 200px;
+    }
+    
+    .arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    
+    .left-arrow {
+        left: 5px;
+    }
+    
+    .right-arrow {
+        right: 5px;
+    }
+    
+    .about-wrapper {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .playlist-item {
+        min-width: 200px;
+    }
+    
+    .playlist-item img {
+        height: 150px;
+    }
+    
+    .heart-target {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .nav-item {
+        padding: 0.3em 0.6em;
+        margin-right: 0.5em;
+        font-size: 0.9em;
+    }
+}
